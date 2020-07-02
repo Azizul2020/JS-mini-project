@@ -1,0 +1,27 @@
+.upbox {
+    width: 250px;
+    height: 50px;
+    background: violet;
+    margin: auto;
+}
+
+.upbox h2 {
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.box {
+    width: 250px;
+    height: 300px;
+    background: orange;
+    margin: auto;
+    transform-origin: top;
+    transition: 1s;
+    transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    -o-transform: scaleY(0);
+}

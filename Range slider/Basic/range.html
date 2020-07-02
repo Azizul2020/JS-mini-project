@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Range</title>
+    <style type="text/css">
+        body {
+            background: #eeffcc;
+        }
+        
+        input {
+            width: 80%;
+            position: absolute;
+            top: 40%;
+            left: 50px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            height: 20px;
+            background: #88b9a0;
+            outline: none;
+            border-radius: 10px;
+            box-shadow: inset 0px 0px 20px black;
+        }
+        
+        input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: red;
+            border: 1.5px solid white;
+        }  
+        input::-moz-slider-thumb {
+            -webkit-appearance: none;
+            
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: red;
+            border: 1.5px solid white;
+        }
+        
+        .show {
+            width: 90px;
+            height: 90px;
+            border-radius: 35px 34px 0px 34px;
+            background: black;
+            transform: rotate(45deg);
+            position: relative;
+            left: 50%;
+        }
+        
+        span {
+            position: absolute;
+            top: 21px;
+            color: white;
+            font-size: 50px;
+            left: 27px;
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="show">
+        <span>50</span>
+    </div>
+    <input type="range" class="scroll" min="0" max="100" />
+    <script type="text/javascript">
+        var input = document.querySelector('.scroll');
+        var show = document.querySelector('.show span');
+        input.addEventListener('input', function() {
+            show.innerHTML = this.value;
+        });
+    </script>
+</body>
+
+</html>

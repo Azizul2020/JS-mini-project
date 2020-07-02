@@ -1,0 +1,3 @@
+	সতর্কতাঃ
+		১। Image link করার জন্য অবশ্যই  img tag কে link করতে হবে;
+		২। For adding function name in event listener first bracket () must be avoid after 		function name.

@@ -1,0 +1,28 @@
+.content{
+	width:700px;
+	margin:auto;
+}
+.button{
+	width:100%;
+	display:flex;
+	justify-content:space-between;
+}
+.btn{
+	background:orange;
+	padding:12px 30px;
+	color:white;
+	border-bottom:2px solid lime;
+	font-size:27px;
+	text-align:center;
+}
+.tab{
+	width:100%;
+	background:#2b842b;
+	height:300px;
+	text-align:center;
+	line-height:265px;
+	font-size:30px;
+	color:white;
+	margin-top:10px;
+	
+}

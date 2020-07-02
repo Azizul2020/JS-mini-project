@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Range Slider</title>
+	<style type="text/css">
+		*{margin:0;}
+		body{
+			width:100%;
+			height:100%;
+			box-sizing:border-box;
+			background:#bbcc66ff;
+			overflow:hidden;
+		}
+		.slider{
+			
+			width:60%;
+			margin:16% auto;
+			position:relative;
+		}
+		
+		input{
+				
+			-webkit-appearance:none;
+			width:100%;
+			height: 18px;
+			background:#f6f6fc;
+			border:none;
+			outline:none;
+			box-shadow: inset 0px 0px 11px #9c9191;
+			border-radius: 20px;
+		}
+		input::-webkit-slider-thumb{
+			-webkit-appearance:none;
+			width:60px;
+			height:60px;
+			z-index:3;
+			cursor:pointer;
+			position:relative;
+			border-radius:50%;
+			border:3px solid white;
+			background:orange;
+			
+		}
+		
+		.bar{
+			height:18px;
+			background:green;
+			width:50%;
+			position:absolute;
+			z-index:1;
+			top:2px;
+			left: 1px;
+			border-radius: 20px 0px 0px 20px;
+		}
+		.show{
+			text-align:center;
+			background:orange;
+			height:50px;
+			font-size:32px;
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<div class="show">Now the value is : 50</div>
+	<div class="slider">
+			
+			<input type="range" min="0" max="100" value="50" class="slide" />
+			
+			<div class="bar"></div>
+		
+	</div>
+	
+	
+	
+	<script type="text/javascript">
+		var bar=document.querySelector('.bar');
+		var show=document.querySelector('.show');
+		var input=document.querySelector('.slide');
+		input.addEventListener('input',function(){
+			bar.style.width=this.value+'%';
+			show.innerHTML="Now the value is : "+this.value;
+			
+		});
+	
+	</script>
+</body>
+</html>

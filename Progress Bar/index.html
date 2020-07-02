@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <style>
+		*{
+			margin:0;
+		}
+		body{
+			background:#bbbb6ccf;
+		}
+		h1{
+			text-align:center;
+			background:orange;
+			padding:12px 0px;
+			color:white;
+			font-size:40px;
+		}
+        .progress {
+            width: 80%;
+            margin: auto;
+            height: 30px;
+            background: #f6f6f6;
+            border-radius: 5px;
+            transform: translateY(200px);
+        }
+        
+        .bar {
+            height: 100%;
+            width: 0;
+            background: lime;
+            border-radius: 5px;
+        }
+        
+        span {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            width: 28px;
+            height: 28px;
+            border-radius:50%;
+            position:absolute;
+            top: -17px;
+			left:-2%;
+            font-size: 23px;
+            color: white;
+            background: yellowgreen;
+            padding: 16px;
+        }
+        
+        button {
+            position: absolute;
+            top: 55%;
+            left: 40%;
+            width: 150px;
+            height: 38px;
+            background: #b1b;
+            font-size: 23px;
+            color: white;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+			
+        }
+    </style>
+</head>
+
+<body>
+	<h1>PROGRESS BAR</h1>
+    <div class="progress">
+        <div class="bar">
+		
+			<span>
+				<div class="text">0%</div>
+			</span>
+		</div>
+    </div>
+    <button class='btn'>Increase</button>
+    <script>
+        var bar = document.querySelector('.bar');
+        var btn = document.querySelector('.btn');
+        var span = document.querySelector('.bar span');
+        var set = 1;
+        widthValue = 0;
+
+       btn.addEventListener('click',function(){
+	   if(set==1){
+			set=0;
+			
+			var r = setInterval(function(){
+			
+		
+			widthValue++;
+			bar.style.width=widthValue+'%';
+			span.innerHTML=widthValue+'%';
+			span.style.left=(widthValue-2)+'%';
+			if(widthValue>=100){
+				clearInterval(r);
+				btn.innerHTML='Decrease';
+
+			}
+		
+			},100);
+		
+		}else{
+			set=1;
+			
+			var d=setInterval(function(){
+				
+					widthValue--;
+					bar.style.width=widthValue+'%';
+					span.innerHTML=widthValue+'%';
+					span.style.left=(widthValue-2)+'%';
+					
+					if(widthValue<=0){
+						clearInterval(d);
+						btn.innerHTML='Increase';
+					}
+				
+				},100);
+		
+		}
+	   });
+			
+			
+    </script>
+</body>
+
+</html>
